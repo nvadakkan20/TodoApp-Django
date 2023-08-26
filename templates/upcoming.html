@@ -1,0 +1,32 @@
+<!-- TASKS -->
+
+<form
+  class="form row justify-content-center"
+  autocomplete="off"
+  method="post"
+  name="new_task"
+>
+{% csrf_token %}
+  <div class="green col-1 h-100">
+    <button class="btn block-cube block-cube-hover" type="submit" name="assists" value="switch_state">
+      <div class="bg-top">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg-right">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="bg">
+        <div class="bg-inner"></div>
+      </div>
+      <div class="text">
+        <a
+          class="text-danger"
+          data-mdb-toggle="tooltip"
+          title="Delete todo"
+          ><i class="fa-solid fa-check" style="color: #90EE90;"></i
+        ></a>
+      </div>
+    </button>
+  </div>
+  {% include 'form_components.html' with task=task %}
+</form>

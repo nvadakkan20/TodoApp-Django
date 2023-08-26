@@ -1,0 +1,53 @@
+<div class="col-6 h-100 mx-2 control block-cube block-input task_name">
+  <input name="task_exist" type="text" value="{{ task.name }}" readonly />
+  <div class="bg-top">
+    <div class="bg-inner"></div>
+  </div>
+  <div class="bg-right">
+    <div class="bg-inner"></div>
+  </div>
+  <div class="bg">
+    <div class="bg-inner"></div>
+  </div>
+</div>
+<div class="col-3 h-100">
+  <div class="control block-cube block-input">
+    <input
+      name="date"
+      type="datetime-local"
+      value="{{ task.datetime_iso }}"
+      readonly
+    />
+    <div class="bg-top">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg-right">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg">
+      <div class="bg-inner"></div>
+    </div>
+  </div>
+</div>
+<div class="red col-1 h-100">
+  <button class="btn block-cube block-cube-hover" type="submit" name="assists" value="delete_task">
+    <div class="bg-top">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg-right">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="bg">
+      <div class="bg-inner"></div>
+    </div>
+    <div class="text">
+      <a
+        class="text-danger"
+        data-mdb-toggle="tooltip"
+        title="Delete this action"
+        ><i class="fas fa-trash-alt" style="color: #EE4B2B;"></i
+      ></a>
+    </div>
+  </button>
+</div>
+<input type="hidden" name="id" value="{{ task.id }}" />
