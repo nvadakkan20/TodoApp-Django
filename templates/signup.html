@@ -1,68 +1,82 @@
 {% extends 'base.html' %}
 {% block content %}
-<title>Sign up</title>
-{% load static %}
-<link rel="stylesheet" href="{% static 'registration.css' %}" />
-<style>
-  /* Add custom CSS styles for the black background and white form */
-  body {
-    background-color: black;
-    color: white;
-  }
-  .form {
-    background-color: rgba(255, 255, 255, 0.1); /* White with some transparency */
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 10%;
-    width: 300px;
-  }
-  .form h3 {
-    color: white;
-  }
-  .control {
-    margin-bottom: 10px;
-  }
-  .block-cube input {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    width: 100%;
-  }
-  .btn {
-    background-color: #fff;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  .btn:hover {
-    background-color: #ddd;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'registration.css' %}" />
+    <style>
+        /* Common styles for both desktop and mobile */
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .form {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 0 auto;
+            max-width: 400px; /* Adjust the max-width as needed */
+        }
+        .form h3 {
+            color: white;
+        }
+        .control {
+            margin-bottom: 10px;
+        }
+        .block-cube input {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100%;
+        }
+        .btn {
+            background-color: #fff;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #ddd;
+        }
+
+        /* Media query for smaller screens (e.g., mobile devices) */
+        @media (max-width: 768px) {
+            .form {
+                padding: 10px;
+                max-width: 300px; /* Adjust for smaller screens */
+            }
+        }
+    </style>
 </head>
 <body>
-  <form class="form" autocomplete="off" method="post">
-    {% csrf_token %} 
-
-      <div class="control">
-         <h3>Sign up</h3>
-      </div>
-      <div class="control block-cube block-input">
-         <input name="username" type="text" placeholder="Username" required />
-      </div>
-      <div class="control block-cube block-input">
-         <input name="password" type="password" placeholder="Password" required />
-      </div>
-      <div class="control block-cube block-input">
-         <input name="re-password" type="password" placeholder="Re-enter Password" required />
-      </div>
-      <button class="btn block-cube block-cube-hover" type="submit">Register</button>
-      <div class="footer_div">
-        <a href="{% url 'login' %}">signIn</a>
-      </div>
+    <form class="form" autocomplete="off" method="post">
+        {% csrf_token %}
+        <div class="control">
+            <h3>Sign up</h3>
+        </div>
+        <div class="control block-cube block-input">
+            <input name="username" type="text" placeholder="Username" required />
+        </div>
+        <div class="control block-cube block-input">
+            <input name="password" type="password" placeholder="Password" required />
+        </div>
+        <div class="control block-cube block-input">
+            <input name="re-password" type="password" placeholder="Re-enter Password" required />
+        </div>
+        <button class="btn block-cube block-cube-hover" type="submit">Register</button>
+        <div class="footer_div">
+            <a href="{% url 'login' %}">SignIn</a>
+        </div>
     </form>
 </body>
 </html>
