@@ -1,0 +1,2 @@
+web: gunicorn TodoApp-Django.wsgi:application --log-file -
+--log-level debug
