@@ -112,6 +112,12 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Example CSRF_COOKIE_DOMAIN setting
+CSRF_COOKIE_DOMAIN = 'todoapp-django.up.railway.app'
+CSRF_COOKIE_DOMAIN = None
+
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
