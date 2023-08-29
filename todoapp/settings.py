@@ -114,7 +114,9 @@ USE_TZ = True
 
 # Example CSRF_COOKIE_DOMAIN setting
 CSRF_COOKIE_DOMAIN = 'todoapp-django.up.railway.app'
-CSRF_COOKIE_DOMAIN = None
+
+CSRF_COOKIE_SECURE = True  # Set to True in production with HTTPS
+
 
 
 
